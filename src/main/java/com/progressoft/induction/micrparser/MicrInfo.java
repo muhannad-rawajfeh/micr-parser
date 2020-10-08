@@ -47,4 +47,13 @@ public class MicrInfo {
     public void setChequeDigit(String chequeDigit) {
         this.chequeDigit = chequeDigit;
     }
+
+    public void setAll(String chequeNumber, String bankCode, String branchCode,
+                       String accountNumber, String chequeDigit) {
+        this.chequeNumber = chequeNumber;
+        this.bankCode = bankCode;
+        this.branchCode = branchCode;
+        this.accountNumber = accountNumber;
+        this.chequeDigit = chequeDigit;
+    }
 }
