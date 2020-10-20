@@ -22,13 +22,16 @@ public class MyMicrParser implements MicrParser {
 
     private String[] getMicrValues(Matcher matcher) {
         String[] values = new String[5];
-        int index = 0;
-        while (matcher.find()) {
-            values[index] = matcher.group(index + 1);
-            System.out.println(values[index]); //Just To Test
-            index++;
+        if (matcher.find()) {
+            for (int i = 0; i < values.length; i++) {
+                values[i] = matcher.group(i + 1);
+                System.out.println(values[i]); //Just To Test
+            }
         }
-        //isValidNumberOfFields(index);
+        else {
+            throw new MicrParserException("Invalid micr");
+        }
+        //isValidNumberOfFields();
         return values;
     }
 
@@ -60,10 +63,5 @@ public class MyMicrParser implements MicrParser {
         micrInfo.setChequeDigit(chequeDigit);
 
         return micrInfo;
-    }
-
-    public static void main(String[] args) {
-        MicrParser parser = new MyMicrParser("^<(\\d{8})<:(\\d{2})=(\\d{4}):(\\d{14})< (\\d+)?");
-        parser.parse("<00002019<:02=0003:00000010220474< 001");
     }
 }
