@@ -1,3 +1,4 @@
+## Parsing Micr through its regex
 What is MICR?
 - MICR stands for Magnetic Ink Character Recognition.
 - MICR is a process by which documents are printed using magnetic ink/toner and special fonts to create machine-readable information for quick processing of paper-based payments. 
